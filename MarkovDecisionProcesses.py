@@ -122,6 +122,7 @@ for n in range(100):
 #The function that actually solve the maze using Markov Decision Processes
 def MarkovDP(Row, Column, Reward, Utility):
 	#Initialize the values of the possible next moves
+	print("Move to ({}, {})"). format(Row, Column)
 	if Row == 8:
 		utilityUp = utility[Row-1][Column-1]
 		rewardUp = reward[Row-1][Column-1]
@@ -152,20 +153,18 @@ def MarkovDP(Row, Column, Reward, Utility):
 			Column = Column + 1
 			Utility = Utility + utilityRight
 			Reward = Reward + rewardRight
-			print("Move to ({}, {})"). format(Row, Column)
 			MarkovDP(Row,Column,Reward,Utility)
 		elif utilityUp >= utilityRight and utilityUp >= utilityLeft:
 			Row = Row + 1
 			Utility = Utility + utilityUp
 			Reward = Reward + rewardUp
-			print("Move to ({}, {})"). format(Row, Column)
 			MarkovDP(Row,Column,Reward,Utility)
 		elif utilityLeft >= utilityUp and utilityLeft >= utilityRight:
 			Column = Column - 1
 			Utility = Utility + utilityLeft
 			Reward = Reward + rewardLeft
-			print("Move to ({}, {})"). format(Row, Column)
 			MarkovDP(Row,Column,Reward,Utility)
 
 #Calling the MarkovDP Function
+print ("The path to reach the Apple using Markov Decision Processes is: ")
 MarkovDP(1,1,Reward,Utility)
