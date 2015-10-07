@@ -44,10 +44,10 @@ if (len(sys.argv) < 3 or len(sys.argv)>5):
 	#Declaring the defaul values for epsilon and the world name
 	epsilon = 0.5
 	worldName = 'World1MDP.txt'
-
-#world number
-worldName = sys.argv[1]
-epsilon= float(sys.argv[2])
+else:
+	#world number
+	worldName = sys.argv[1]
+	epsilon= float(sys.argv[2])
 
 #Declaring some variables that are going to be used later on the code
 gamma = 0.9
