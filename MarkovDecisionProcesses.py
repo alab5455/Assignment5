@@ -31,15 +31,33 @@ class maze():
 			my_array.append(int(format(elements)))
 		return my_array[Position-1]
 
+#The following few lines are to use epsilon and the world name as a command line
+import sys
+def parseFile(fileDescriptor):
+	parsed = []
+	for line in fileDescriptor:
+	parsed.append(line.rstrip('\n').split(' '))
+	return parsed
+
+ #take only full commands 
+if (len(sys.argv) < 3 or len(sys.argv)>5):
+	#Declaring the defaul values for epsilon and the world name
+	epsilon = 0.5
+	worldName = 'World1MDP.txt'
+	sys.exit()
+#world number
+worldName = sys.argv[1]
+epsilon= float(sys.argv[2])
+
+#Declaring some variables that are going to be used later on the code
 gamma = 0.9
-epsilon = input("Enter the value of epsilon that you want to use, the value should be small (typically Less than 1) : ") #The user get to choose the value of epsilon
 Reward = 0
 Utility = 0
 changeRequired = epsilon * ( (1 - gamma) / gamma )
 Maze = maze()
 
 #Reading the data from the files to the mazes variables:
-with open('World1MDP.txt') as world:
+with open(worldName) as world:
 	for i in range(8):
 		Maze.addVertex(i)
 		for j in range(10):
