@@ -44,7 +44,7 @@ if (len(sys.argv) < 3 or len(sys.argv)>5):
 	#Declaring the defaul values for epsilon and the world name
 	epsilon = 0.5
 	worldName = 'World1MDP.txt'
-	sys.exit()
+
 #world number
 worldName = sys.argv[1]
 epsilon= float(sys.argv[2])
