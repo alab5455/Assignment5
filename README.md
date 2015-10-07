@@ -1,5 +1,8 @@
 # Assignment5
 
+# Command Line:
+First, enter the world name, and then enter the value of epsilon that you want to use.
+
 # The effect of Epsilon of the result:
 First, when Epsilon is very large (Greater than 1), the program freezes and cannot solve the puzzle.
 Second, for Epsilon greater than 0.47 (I tried 0.48, 0.5, 0.8, and 1), the path starts by moving right.
