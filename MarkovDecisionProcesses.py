@@ -37,7 +37,7 @@ def parseFile(fileDescriptor):
 	parsed = []
 	for line in fileDescriptor:
 		parsed.append(line.rstrip('\n').split(' '))
-		return parsed
+	return parsed
 
  #take only full commands 
 if (len(sys.argv) < 3 or len(sys.argv)>5):
